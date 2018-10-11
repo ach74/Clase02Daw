@@ -5,10 +5,10 @@
 <title>Exemple localStorage</title>
 </head>
   
-<select id="sel">
-  <option value="Rojo">Rojo</option>
-  <option value="Azul">Azul</option>
-  <option value="Verde">Verde</option>
+<select id="sel" onchange="cambiarFondo()">
+  <option value="1">Rojo</option>
+  <option value="2">Azul</option>
+  <option value="3">Verde</option>
 </select>
 
 <input type="text"  placeholder="nombre" id="nom"><br />
@@ -17,12 +17,12 @@
 
 <button onclick="guardar()">Guardar</button>
 <button onclick="carregar()">Carregar</button>
-<button onclick="borrar()">borrar</button>
+<button onclick="borrar()">Borrar</button>
   <br>
   <br>
-  <div id="c1"></div>
-  <div id="c2"></div>
-  <div id="c3"></div>
-  <div id="c4"></div>
+  <div id="c1" onclick="borrar1()"></div>
+  <div id="c2" onclick="borrar2()"></div>
+  <div id="c3" onclick="borrar3()"></div>
+  <div id="c4" onclick="borrar4()"></div>
 </body>
 </html>

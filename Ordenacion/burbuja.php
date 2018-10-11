@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html>
 <body>
-
 <?php
 
+function burbuja($array)
+{
+    for($i=1;$i<count($array);$i++){
 
-$a = array(2,3,5,6,9,87,5,6,2,1,7);
+        for($j=0;$j<count($array)-$i;$j++){
 
-$d = array();
+            if($array[$j]>$array[$j+1]){
 
-$d[0]=5;
+                $k=$array[$j+1];
+                $array[$j+1]=$array[$j];
+                $array[$j]=$k;
 
-$contador = 0;
-
-for ($z=0; $z < count($a); $z++) { 
-	for ($w=1; $w < count($a); $w++) { 	
-		if ($a[$z]<$a[$w]) {
-			
-
-		}
-	}
+            }
+        }
+    }
+ 
+    return $array;
 }
-
+ 
+$a=array(59,98,4,75,38,8,2,1,6);
+ 
+echo "Iniciales<br>";
+for($i=0;$i<count($a);$i++){
+  echo $a[$i]."\n";
+}
+  
+ 
+$arrayB=burbuja($a);
+ 
+echo "<br><br>Ordenados<br>";
+for($i=0;$i<count($arrayB);$i++){
+    echo $arrayB[$i]."\n";
+	}
 ?>
-
 </body>
 </html>

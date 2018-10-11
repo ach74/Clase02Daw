@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Algoritmos de busqueda</title>
+	<meta charset="UTF-8">
+</head>
+
+<script type="text/javascript">
+	
+	function buscar() {
+		var select = document.getElementById("selOrdenacion").value;
+		if (select==1) {
+			location.href="burbuja.php";
+		}else if (select==2) {
+			location.href="test01.php";
+		}else if (select==3) {
+			location.href="directa.php";
+		}
+	}
+
+	function generar() {
+		var x = document.getElementById("selGeneracion").value;
+		if (x==1) {
+			document.getElementById("Aleatorio").style.display="block";	
+			document.getElementById("teclado").style.display="none";
+		}
+		if (x==2) {
+			document.getElementById("teclado").style.display="block";	
+			document.getElementById("Aleatorio").style.display="none";
+		}
+		
+	}
+</script>
+<style type="text/css"> 
+	#Aleatorio,#teclado{
+		display: none;
+	}
+</style> 
+<body>
+
+	<form action="text01.php" method="POST">
+
+		<h1>Algoritmos de busqueda</h1>
+
+		<select id="selOrdenacion">
+			<option value="1">Burbuja</option>
+			<option value="2">Búsqueda binaria</option>
+			<option value="3">Selección directa.</option>
+		</select>
+
+		<select id="selGeneracion" onchange="generar()">
+			<option name="" value="">Seleciona una opcion</option> 
+			<option value="1">Aleatorio</option>
+			<option value="2">Por teclado</option>
+			<option value="3">Archivo</option>
+		</select>
+
+		<div id="Aleatorio">
+			<input type="text" id="tamañoArray">
+		</div>
+
+		<div id="teclado">
+			<input type="text">
+		</div>
+
+		<input type="text" name="caja_valor" id="caja_valor" value="">
+		
+		<input type="submit" value="Guardar">
+
+	</form>
+</body>
+</html>
