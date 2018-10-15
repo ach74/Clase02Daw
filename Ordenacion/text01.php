@@ -17,15 +17,20 @@
 	 */
 	$tamaño = $_POST["tamañoArray"];
 	$valoresTeclado =  $_POST["valoresTeclado"];
+	
 	$opSelect1 = $_POST["select1"];
 	$opSelect2 = $_POST["select2"];
+	$archivoTxt = $_POST["archivoTxt"];
+	echo $archivoTxt;
 
 	/**
 	 * Inicio del programa
 	 * @method void main
 	 */
-	main();
 	
+	//main();
+
+
 	/**
 	 * Nos genera una array desordenada dependiendo del metodo  de ordenacion elegido
 	 * @return array
@@ -49,7 +54,7 @@
 			return $arrayAleatoria;
 		}elseif ($opSelect2==2) {
 			echo " <br> Teclado <br>";
-			$arrayTeclado =explode(",",$valoresTeclado);
+			$arrayTeclado = explode(",",$valoresTeclado);
 			return $arrayTeclado;
 		}elseif ($opSelect2==3) {
 			echo " <br> Aun no funciona <br> ";

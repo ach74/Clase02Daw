@@ -27,7 +27,7 @@ function guardar() {
 };  
 
 function carregar(){
-	var nom_cookie, valor_cookie, color_cookie,c1_cookie,c2_cookie,c3_cookie,c4_cookie;
+	var valor_cookie, color_cookie,c1_cookie,c2_cookie,c3_cookie,c4_cookie;
 	var temp;
 	var array_cookies = document.cookie.split(";");
 
