@@ -3,6 +3,10 @@
 <body>
 	<?php
 
+	/**
+	 * Nos genera una array desordenada dependiendo del metodo  de ordenacion elegido
+	 * @return array
+	 */
 	function tipoArray(){
 		global $opSelect2,$valoresTeclado,$tamaño;
 		if ($opSelect2==1) {
@@ -25,6 +29,11 @@
 		}
 	}
 
+	/**
+	 * Metodo de ordenacion por burbuja
+	 * @param type $array 
+	 * @return type $array 
+	 */
 	function burbuja($array){
 		for($i=1;$i<count($array);$i++){
 			for($j=0;$j<count($array)-$i;$j++){
@@ -32,13 +41,17 @@
 					$a=$array[$j+1];
 					$array[$j+1]=$array[$j];
 					$array[$j]=$a;
-
 				}
 			}
 		}
 		return $array;
 	}
 
+	/**
+	 * Metodo de ordenacion por selecion directa
+	 * @param type $array 
+	 * @return type
+	 */
 	function selecion($array){
 		for ($i=0; $i<(count($array)-1); $i++){
 			$min=$i;
@@ -53,6 +66,11 @@
 		return $array;
 	}
 
+	/**
+	 * Metodo de ordenacion por inserción directa
+	 * @param type $array 
+	 * @return type
+	 */
 	function directa($array){
 		for ($i=1; $i<(count($array)); $i++){
 			$aux=$array[$i];
