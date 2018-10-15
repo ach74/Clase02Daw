@@ -36,6 +36,13 @@ echo "<br><br>Ordenados<br>";
 for($i=0;$i<count($arrayB);$i++){
     echo $arrayB[$i]."\n";
 	}
+
+
+    /* Comprovar si no ha puesto nada
+    if (is_null ( $valoresTeclado ) == false) {
+        echo "a";
+    }
+*/
 ?>
 </body>
 </html>

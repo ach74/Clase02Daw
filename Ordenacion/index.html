@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Algoritmos de busqueda</title>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" lang="es-es">
 </head>
 
 <script type="text/javascript">
@@ -23,47 +23,100 @@
 		if (x==1) {
 			document.getElementById("Aleatorio").style.display="block";	
 			document.getElementById("teclado").style.display="none";
-		}
-		if (x==2) {
+			document.getElementById("jsonArchivo").style.display="none";	
+		}else if (x==2) {
+			
 			document.getElementById("teclado").style.display="block";	
 			document.getElementById("Aleatorio").style.display="none";
+			document.getElementById("jsonArchivo").style.display="none";
+
+			confirm("Introduce los números que quieres ordenar, utilizando como separado las comas. En caso de que  quieras usar decimales usa el punto. Ejemplo: 1,5,6,1.5,4,5,6");	
+		}else if (x==3) {
+			document.getElementById("jsonArchivo").style.display="block";	
+			document.getElementById("Aleatorio").style.display="none";
+			document.getElementById("teclado").style.display="none";
+		}else{
+			document.getElementById("Aleatorio").style.display="none";
+			document.getElementById("teclado").style.display="none";
+			document.getElementById("jsonArchivo").style.display="none";	
 		}
 		
 	}
+
+	function processFiles(files) {
+		var file = files[0];
+
+		var reader = new FileReader();
+
+		reader.onload = function (e) {
+			var output = document.getElementById("fileOutput");
+			output.textContent = e.target.result;
+		};
+		reader.readAsText(file);
+	}
+
 </script>
 <style type="text/css"> 
-	#Aleatorio,#teclado{
-		display: none;
-	}
+#Aleatorio,#teclado,#jsonArchivo{
+	display: none;
+}
+
+body{
+	background: #e8eaf6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#contenidoForm{
+	width: 500px;
+	height: auto;
+	border:  1px solid black;
+	padding: 10px;
+	border-radius: 50px 20px;
+	margin-top: 10%;
+	background: #b6b8c3;
+	text-align: center;
+}
+.select{
+	width: 150px;
+	height: 20px;
+	margin-bottom: 20px;
+}
 </style> 
 <body>
 
-	<form action="text01.php" method="POST">
+	<form action="text01.php" method="POST" id="contenidoForm">
 
 		<h1>Algoritmos de busqueda</h1>
 
-		<select id="selOrdenacion">
-			<option value="1">Burbuja</option>
-			<option value="2">Búsqueda binaria</option>
-			<option value="3">Selección directa.</option>
+		<select id="selOrdenacion" class="select" name="select1">
+			<option name="value1" value="1">Burbuja</option>
+			<option name="value2" value="2">Inserción Directa</option>
+			<option name="value3" value="3">Selección directa</option>
 		</select>
+		<br>
 
-		<select id="selGeneracion" onchange="generar()">
-			<option name="" value="">Seleciona una opcion</option> 
+		<select id="selGeneracion" class="select" onchange="generar()" name="select2">
+			<option name=" " value="" selected="selected">Seleciona una opcion</option> 
 			<option value="1">Aleatorio</option>
 			<option value="2">Por teclado</option>
 			<option value="3">Archivo</option>
+			<option value="4">Por defecto</option>
 		</select>
+		<br>
 
 		<div id="Aleatorio">
-			<input type="text" id="tamañoArray">
+			<input type="text" name="tamañoArray" placeholder="Escribe el tamaño de la array" >
 		</div>
-
+		
 		<div id="teclado">
-			<input type="text">
+			<input type="text" name="valoresTeclado" placeholder="Escribe los valores" >
 		</div>
 
-		<input type="text" name="caja_valor" id="caja_valor" value="">
+		<div id="jsonArchivo">
+			<input id="fileInput" type="file" size="50" name="archivoJSON" onchange="processFiles(this.files)">
+			<div id="fileOutput"></div>
+		</div>
 		
 		<input type="submit" value="Guardar">
 
