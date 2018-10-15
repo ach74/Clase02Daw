@@ -65,7 +65,7 @@
 	}
 
 
-
+	//Hacer main
 
 	$tamaño = $_POST["tamañoArray"];
 	$valoresTeclado =  $_POST["valoresTeclado"];
