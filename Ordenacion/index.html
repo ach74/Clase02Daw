@@ -42,19 +42,6 @@
 		}
 		
 	}
-
-	function processFiles(files) {
-		var file = files[0];
-
-		var reader = new FileReader();
-
-		reader.onload = function (e) {
-			var output = document.getElementById("fileOutput");
-			output.textContent = e.target.result;
-		};
-		reader.readAsText(file);
-	}
-
 </script>
 <style type="text/css"> 
 #Aleatorio,#teclado,#jsonArchivo{
@@ -85,7 +72,7 @@ body{
 </style> 
 <body>
 
-	<form action="text01.php" method="POST" id="contenidoForm">
+	<form action="text01.php" method="POST" id="contenidoForm" enctype="multipart/form-data">
 
 		<h1>Algoritmos de busqueda</h1>
 
@@ -100,8 +87,7 @@ body{
 			<option name=" " value="" selected="selected">Seleciona una opcion</option> 
 			<option value="1">Aleatorio</option>
 			<option value="2">Por teclado</option>
-			<option value="3">Archivo</option>
-			<option value="4">Por defecto</option>
+			<option value="3">Por defecto</option>
 		</select>
 		<br>
 
@@ -111,11 +97,6 @@ body{
 		
 		<div id="teclado">
 			<input type="text" name="valoresTeclado" placeholder="Escribe los valores" >
-		</div>
-
-		<div id="jsonArchivo">
-			<input id="fileInput" type="file" size="50" name="archivoTxt" onchange="processFiles(this.files)">
-			<div id="fileOutput"></div>
 		</div>
 		
 		<input type="submit" value="Guardar">

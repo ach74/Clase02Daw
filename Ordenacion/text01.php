@@ -20,15 +20,13 @@
 	
 	$opSelect1 = $_POST["select1"];
 	$opSelect2 = $_POST["select2"];
-	$archivoTxt = $_POST["archivoTxt"];
-	echo $archivoTxt;
 
 	/**
 	 * Inicio del programa
 	 * @method void main
 	 */
 	
-	//main();
+	main();
 
 
 	/**
@@ -56,9 +54,7 @@
 			echo " <br> Teclado <br>";
 			$arrayTeclado = explode(",",$valoresTeclado);
 			return $arrayTeclado;
-		}elseif ($opSelect2==3) {
-			echo " <br> Aun no funciona <br> ";
-		}elseif($opSelect2==4)  {
+		}else  {
 			echo " <br> Por defecto <br> ";
 			$arrayDefecto = array(95,8,-1,32,48,76,14,26,14);
 			return $arrayDefecto;
@@ -156,7 +152,7 @@
 			$aux=$array[$i];
 
 			/**
-			 * Segundo bucle 
+			 * Segundo bucle for
 			 */ 
 			for($j=$i-1;$j>=0 && $array[$j]>$aux; $j--){
 				$array[$j+1]=$array[$j];
