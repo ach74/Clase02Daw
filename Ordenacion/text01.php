@@ -144,20 +144,26 @@
 		/**
 		 * Bucle "for" con la condicion de recorrer
 		 * todas la posiciones de la array, la variable 
-		 * generada en bucle inicia en 1
+		 * generada en bucle inicia en 1, de izquierda a derecha.
 		 */ 
 		for ($i=1; $i<(count($array)); $i++){
 
-			//Variable auxiliar que almacena el valor de coresponditene a la array en al posicion "$i"
+			// Variable auxiliar que almacena el valor de corresponditene a la array en al posicion "$i"
 			$aux=$array[$i];
+			// Variable para almacenar la posicion
+			$pos = $i;
 
 			/**
-			 * Segundo bucle for
-			 */ 
-			for($j=$i-1;$j>=0 && $array[$j]>$aux; $j--){
-				$array[$j+1]=$array[$j];
-				$array[$j]=$aux;
-			}	
+			* Condicion para seguir comprarnado simpre que el la posicion 
+			* es mayor que 0,  y ademas de  que el numero a la izquierda 
+			* es mayor al numero actual habra un  cambio de  posiciones.
+			*/
+			while (($i>0)&&($array[$i-1])>aux){
+				$array[$pos] = $array[$pos-1];
+				//disminuimos la posicion para ir comprobando con el siguiente numero
+				$pos--;
+			}
+			$array[pos] = aux;
 		}
 		return $array;
 	}
