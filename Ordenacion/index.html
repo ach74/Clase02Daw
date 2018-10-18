@@ -3,73 +3,9 @@
 <head>
 	<title>Algoritmos de busqueda</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" lang="es-es">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<script type="text/javascript" src="js/js.js"></script>
 </head>
-
-<script type="text/javascript">
-	
-	function buscar() {
-		var select = document.getElementById("selOrdenacion").value;
-		if (select==1) {
-			location.href="burbuja.php";
-		}else if (select==2) {
-			location.href="test01.php";
-		}else if (select==3) {
-			location.href="directa.php";
-		}
-	}
-
-	function generar() {
-		var x = document.getElementById("selGeneracion").value;
-		if (x==1) {
-			document.getElementById("Aleatorio").style.display="block";	
-			document.getElementById("teclado").style.display="none";
-			document.getElementById("jsonArchivo").style.display="none";	
-		}else if (x==2) {
-
-			document.getElementById("teclado").style.display="block";	
-			document.getElementById("Aleatorio").style.display="none";
-			document.getElementById("jsonArchivo").style.display="none";
-
-			confirm("Introduce los números que quieres ordenar, utilizando como separado las comas. Ejemplo: 1,5,6,4,5,6");	
-		}else if (x==3) {
-			document.getElementById("jsonArchivo").style.display="block";	
-			document.getElementById("Aleatorio").style.display="none";
-			document.getElementById("teclado").style.display="none";
-		}else{
-			document.getElementById("Aleatorio").style.display="none";
-			document.getElementById("teclado").style.display="none";
-			document.getElementById("jsonArchivo").style.display="none";	
-		}
-		
-	}
-</script>
-<style type="text/css"> 
-#Aleatorio,#teclado,#jsonArchivo{
-	display: none;
-}
-
-body{
-	background: #e8eaf6;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-#contenidoForm{
-	width: 500px;
-	height: auto;
-	border:  1px solid black;
-	padding: 10px;
-	border-radius: 50px 20px;
-	margin-top: 10%;
-	background: #b6b8c3;
-	text-align: center;
-}
-.select{
-	width: 150px;
-	height: 20px;
-	margin-bottom: 20px;
-}
-</style> 
 <body>
 
 	<form action="text01.php" method="POST" id="contenidoForm" enctype="multipart/form-data">

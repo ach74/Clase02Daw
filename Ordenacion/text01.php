@@ -158,12 +158,13 @@
 			* es mayor que 0,  y ademas de  que el numero a la izquierda 
 			* es mayor al numero actual habra un  cambio de  posiciones.
 			*/
-			while (($i>0)&&($array[$i-1])>aux){
-				$array[$pos] = $array[$pos-1];
+			while (($i>0)&&($array[$i-1])>$aux){
+				$posDerecha = $pos-1;
+				$array[$pos] = $array[$posDerecha];
 				//disminuimos la posicion para ir comprobando con el siguiente numero
 				$pos--;
 			}
-			$array[pos] = aux;
+			$array[$pos] = $aux;
 		}
 		return $array;
 	}
